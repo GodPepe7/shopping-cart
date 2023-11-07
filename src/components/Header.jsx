@@ -3,7 +3,7 @@ import Cart from "../assets/icons/cart.svg";
 function Header({ styles }) {
   return (
     <header
-      className={`flex justify-between items-center p-10 text-2xl font-medium ${styles}`}
+      className={`sticky flex justify-between items-center p-10 text-2xl font-medium ${styles}`}
     >
       <div>
         <h1>
