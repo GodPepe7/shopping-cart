@@ -1,6 +1,6 @@
 import Cart from "../assets/icons/cart.svg";
 
-function Header({ styles }) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
     <header
       className={`sticky flex justify-between items-center p-10 text-2xl font-medium ${styles}`}
@@ -13,15 +13,20 @@ function Header({ styles }) {
         </h1>
       </div>
       <nav>
-        <ul className="flex gap-20 list-none">
-          <li>Home</li>
-          <li>Shop</li>
-          <li>
-            <button className="border-none">
-              <img className="w-8 h-8" src={Cart} alt="Shopping Cart" />
+            <button
+              className="border-none w-8 h-8"
+              onClick={() => setModalIsOpen(true)}
+            >
+              <img className="" src={Cart} alt="Shopping Cart" />
             </button>
           </li>
         </ul>
+        <div className="justify-self-end">
+          <CartModal
+            modalIsOpen={modalIsOpen}
+            closeModalHandler={() => setModalIsOpen(false)}
+          ></CartModal>
+        </div>
       </nav>
     </header>
   );
