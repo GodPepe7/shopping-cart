@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         home: "url('./src/assets/home-background.png')",
+        "shop-banner": "url(./src/assets/shop-banner.png)",
       },
       colors: {
         "theme-white": "#F7F8F7",
