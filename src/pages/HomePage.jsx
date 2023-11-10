@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 function HomePage() {
   return (
@@ -10,9 +11,9 @@ function HomePage() {
         <p className="text-2xl tracking-wider">
           Discover Manga ranging from old classics to the newest, trending ones!
         </p>
-        <button className="px-12 py-2 w-max self-center text-theme-white bg-theme-black shadow-md uppercase tracking-wider shadow-theme-white/50 transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:border-2">
+        <Button>
           <Link to="/shop">Explore Now</Link>
-        </button>
+        </Button>
       </main>
     </div>
   );
