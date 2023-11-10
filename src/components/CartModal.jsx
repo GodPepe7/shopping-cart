@@ -13,7 +13,7 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
 
   return (
     <dialog
-      className="min-h-screen min-w-[250px] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0"
+      className="min-h-screen min-w-[250px] w-[20%] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0"
       ref={ref}
       onCancel={closeModalHandler}
     >
