@@ -55,7 +55,7 @@ function ShoppingPage() {
       <div className="min-h-[20vh] bg-shop-banner bg-cover bg-center bg-no-repeat">
         <Header color="white"></Header>
       </div>
-      <div className="mx-24 py-8">
+      <div className=" mt-8 mx-auto max-w-screen-2xl w-[90%]">
         <h2 className="text-3xl mb-8">Manga Collection</h2>
         <div className="flex flex-wrap gap-10">
           {mangaList.map((manga) => (
