@@ -3,27 +3,36 @@ import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import ShoppingPage from "./pages/ShoppingPage";
 import ProductPage from "./pages/ProductPage";
+import { createContext } from "react";
+import App from "./App";
 
-const Router = () => {
+function Router() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage />,
+      element: <App />,
       errorElement: <ErrorPage />,
-    },
-    {
-      path: "/shop",
-      element: <ShoppingPage />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: "/shop/:productId",
-      element: <ProductPage />,
-      errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/shop",
+          element: <ShoppingPage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/shop/:productId",
+          element: <ProductPage />,
+          errorElement: <ErrorPage />,
+        },
+      ],
     },
   ]);
 
   return <RouterProvider router={router} />;
-};
+}
 
 export default Router;
