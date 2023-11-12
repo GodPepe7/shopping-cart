@@ -48,6 +48,7 @@ export const useProducts = (page) => {
             title: product.title.english
               ? product.title.english
               : product.title.romaji,
+            price: 10.99,
           };
         });
         setProducts(flattened);
