@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Card({ id, coverImage, title }) {
-  const price = 15.99;
+function Card({ id, coverImage, title, price }) {
   const navigate = useNavigate();
   const handleClick = () => navigate(`${id}`);
   return (
@@ -16,7 +15,7 @@ function Card({ id, coverImage, title }) {
       />
       <div className="px-3 py-3">
         <h3 className="line-clamp-2">{title}</h3>
-        <p>${price}</p>
+        <p>{price}€</p>
       </div>
     </div>
   );
