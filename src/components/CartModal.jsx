@@ -36,6 +36,20 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
               ></BasketItem>
             )
           )}
+          <div className=" text-xl my-2">
+            <p>Total Price</p>
+            <p>
+              {[...basket.values()].reduce(
+                (accumulator, { price, quantity }) =>
+                  accumulator + quantity * price,
+                0
+              )}
+              €
+            </p>
+          </div>
+          <button className="py-1 w-full text-theme-white bg-theme-black shadow-md uppercase tracking-wider">
+            Checkout
+          </button>
       </div>
     </dialog>
   );
