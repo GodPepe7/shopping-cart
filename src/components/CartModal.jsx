@@ -24,7 +24,8 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
         <img src={Close} alt="Close Shopping Cart" />
       </button>
       <h2 className="text-center mb-4">Your Basket</h2>
-      <div>
+      {basket.size > 0 ? (
+        <div>
           {[...basket.entries()].map(
             ([productId, { title, coverImage, price, quantity }]) => (
               <BasketItem
@@ -50,7 +51,12 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
           <button className="py-1 w-full text-theme-white bg-theme-black shadow-md uppercase tracking-wider">
             Checkout
           </button>
-      </div>
+        </div>
+      ) : (
+        <p className="text-center italic font-extralight">
+          Shopping Cart is empty
+        </p>
+      )}
     </dialog>
   );
 }
