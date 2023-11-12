@@ -32,7 +32,7 @@ function Header({ color }) {
           <li
             className={`hover:bg-${color}/60 px-4 rounded-md hover:cursor-pointer`}
           >
-            <Link to="shop/">Shop</Link>
+            <Link to="/shop">Shop</Link>
           </li>
           <li
             className={`hover:bg-${color}/60 bg-opacity-25 px-4 rounded-md hover:cursor-pointer`}
