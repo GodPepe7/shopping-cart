@@ -1,14 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import QuantityInput from "../components/QuantityInput";
 import Button from "../components/Button";
 import { useOutletContext, useParams } from "react-router-dom";
 
 function ProductPage() {
-  const { products } = useOutletContext();
+  const { products, setBasket } = useOutletContext();
   const { productId } = useParams();
   const product = products.find((product) => product.id === +productId);
-  console.log(product);
+  const [quantity, setQuantity] = useState(1);
+
+  const increaseQuantityHandler = () =>
+    setQuantity((prev) => {
+      if (prev < 99) return prev + 1;
+      return 99;
+    });
+
+  const decreaseQuantityHandler = () =>
+    setQuantity((prev) => {
+      if (prev > 1) return prev - 1;
+      return 1;
+    });
+
+  const onChange = (e) => {
+    const value = +e.target.value;
+    if (value >= 1 && value <= 99) setQuantity(value);
+  };
+
+  const totalPrice = product.price * quantity;
+
+  const addToCart = () =>
+    setBasket(
+      (prev) =>
+        new Map(
+          prev.set(product.id, {
+            title: product.title,
+            coverImage: product.coverImage,
+            quantity,
+            price: product.price,
+          })
+        )
+    );
+
   return (
     (product && (
       <div className="min-h-screen bg-[#F5F5F5] text-theme-black">
@@ -26,10 +59,15 @@ function ProductPage() {
           <div className="min-w-[250px]">
             <h2 className=" text-5xl mb-8">{product.title}</h2>
             <div className="text-xl mb-4">{product.description}</div>
-            <p className="font-semibold text-xl mb-4">${product.price}</p>
+            <p className="font-semibold text-xl mb-4">{totalPrice}€</p>
             <div className="w-[150px] mb-2">
-              <QuantityInput quantity={1}></QuantityInput>
-              <Button>Add To Cart</Button>
+              <QuantityInput
+                quantity={quantity}
+                onChange={onChange}
+                increaseQuantityHandler={increaseQuantityHandler}
+                decreaseQuantityHandler={decreaseQuantityHandler}
+              ></QuantityInput>
+              <Button onClick={addToCart}>Add To Cart</Button>
             </div>
           </div>
         </main>

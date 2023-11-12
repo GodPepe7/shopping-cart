@@ -2,6 +2,7 @@ import Plus from "../assets/icons/plus.svg";
 import Minus from "../assets/icons/minus.svg";
 
 function QuantityInput({
+  onChange,
   increaseQuantityHandler,
   decreaseQuantityHandler,
   quantity,
@@ -17,6 +18,7 @@ function QuantityInput({
         max={10}
         value={quantity}
         className="text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+        onChange={onChange}
       />
       <button onClick={increaseQuantityHandler}>
         <img src={Plus} alt="Increase Quantity" />
