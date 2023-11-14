@@ -34,6 +34,7 @@ export const useProducts = (page) => {
   const variables = { page: page };
 
   useEffect(() => {
+    setLoading(true);
     const fetchProducts = async () => {
       try {
         const response = await fetch(URL, {

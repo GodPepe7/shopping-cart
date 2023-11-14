@@ -18,6 +18,8 @@ function ShoppingPage() {
     window.scrollTo(0, 0);
   }, [page]);
 
+  const CARDS_PER_PAGE = 20;
+
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
       <div className="min-h-[20vh] bg-shop-banner bg-cover bg-center bg-no-repeat">
@@ -28,7 +30,19 @@ function ShoppingPage() {
           Manga Collection
         </h2>
         <div className="grid grid-cols-fluid gap-8">
-          {loading && <h2>{loading}</h2>}
+          {loading &&
+            [...Array(CARDS_PER_PAGE)].map((x, i) => (
+              <div
+                className="h-[397px] min-w-[250px] animate-pulse bg-white drop-shadow-md"
+                key={i}
+              >
+                <div className="w-full h-[325px] bg-slate-200"></div>
+                <div className="p-3">
+                  <div className="h-[1rem] bg-slate-200 rounded w-[13ch] mb-1"></div>
+                  <div className="h-[1rem] bg-slate-200 rounded w-[6ch]"></div>
+                </div>
+              </div>
+            ))}
           {error && <h2>{error}</h2>}
           {products?.length > 0 &&
             products.map((product) => (
