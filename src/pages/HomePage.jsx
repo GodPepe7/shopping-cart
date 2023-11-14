@@ -1,8 +1,12 @@
 import Header from "../components/Header";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
 function HomePage() {
+  const navigate = useNavigate();
+  const goToShoppingPageHandler = () => {
+    navigate("/shop");
+  };
   return (
     <div className="min-h-screen bg-home flex flex-col">
       <Header color="white" />
@@ -11,9 +15,8 @@ function HomePage() {
         <p className="text-2xl tracking-wider">
           Discover Manga ranging from old classics to the newest, trending ones!
         </p>
-        <Button>
-          <Link to="/shop">Explore Now</Link>
-        </Button>
+
+        <Button onClick={goToShoppingPageHandler}>Explore Now</Button>
       </main>
     </div>
   );
