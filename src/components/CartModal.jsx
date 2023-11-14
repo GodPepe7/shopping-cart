@@ -11,7 +11,9 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
     if (modalIsOpen) {
       ref.current?.showModal();
     } else {
-      ref.current?.close();
+      setTimeout(() => {
+        ref.current?.close();
+      }, 150);
     }
   }, [modalIsOpen]);
 
@@ -24,7 +26,11 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
 
   return (
     <dialog
-      className="min-h-screen min-w-[250px] w-[40%] max-w-[400px] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0"
+      className={`min-h-screen min-w-[250px] w-[40%] max-w-[400px] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0 ${
+        modalIsOpen
+          ? "animate-[slide-in_0.15s_linear]"
+          : "animate-[slide-out_0.15s_linear]"
+      }`}
       ref={ref}
       onCancel={closeModalHandler}
     >

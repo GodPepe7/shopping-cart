@@ -19,6 +19,16 @@ export default {
       fontFamily: {
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        "slide-in": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "slide-out": {
+          "0%": { width: "100%" },
+          "100%": { width: "0px" },
+        },
+      },
     },
   },
   plugins: [],
