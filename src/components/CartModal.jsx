@@ -4,8 +4,9 @@ import { useOutletContext } from "react-router-dom";
 import BasketItem from "./BasketItem";
 
 function CartModal({ modalIsOpen, closeModalHandler }) {
-  const { basket } = useOutletContext();
+  const { basket, setBasket } = useOutletContext();
   const ref = useRef(null);
+
   useEffect(() => {
     if (modalIsOpen) {
       ref.current?.showModal();
@@ -13,6 +14,13 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
       ref.current?.close();
     }
   }, [modalIsOpen]);
+
+  const deleteFromBasketHandler = (productId) => {
+    setBasket((prev) => {
+      const entryExisted = prev.delete(productId);
+      return entryExisted ? new Map(prev) : prev;
+    });
+  };
 
   return (
     <dialog
@@ -38,6 +46,7 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
                 coverImage={coverImage}
                 price={price}
                 quantity={quantity}
+                onClick={() => deleteFromBasketHandler(productId)}
               ></BasketItem>
             )
           )}
