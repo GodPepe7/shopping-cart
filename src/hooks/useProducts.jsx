@@ -5,6 +5,11 @@ export const useProducts = (page) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  function stripHTML(html) {
+    const document = new DOMParser().parseFromString(html, "text/html");
+    return document.body.textContent || "";
+  }
+
   const URL = "https://graphql.anilist.co";
   const query = `
     query($page: Int){
@@ -12,7 +17,7 @@ export const useProducts = (page) => {
         media(type: MANGA, isAdult: false, sort: [POPULARITY_DESC, SCORE_DESC]) {
           id
           idMal
-          description(asHtml: true)
+          description(asHtml: false)
           title {
             english
             romaji
@@ -49,6 +54,7 @@ export const useProducts = (page) => {
               ? product.title.english
               : product.title.romaji,
             price: 10.99,
+            description: stripHTML(product.description),
           };
         });
         setProducts(flattened);
@@ -61,7 +67,7 @@ export const useProducts = (page) => {
       }
     };
     fetchProducts();
-  }, []);
+  }, [page]);
 
-  return { products, error, loading };
+  return { products, error, loading, setProducts };
 };
