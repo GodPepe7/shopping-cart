@@ -55,6 +55,12 @@ function ProductPage() {
               alt={`${product.title}'s Cover`}
               className="h-auto w-full"
             />
+            <div className="mt-2">
+              <h3 className="text-lg text-center md:text-left font-semibold">
+                Genres
+              </h3>
+              <p>{product.genres.join(", ")}</p>
+            </div>
           </div>
           <div className="min-w-[250px] text-center mx-5 sm:text-left">
             <h2 className=" text-5xl mb-8">{product.title}</h2>
@@ -67,7 +73,9 @@ function ProductPage() {
                 increaseQuantityHandler={increaseQuantityHandler}
                 decreaseQuantityHandler={decreaseQuantityHandler}
               ></QuantityInput>
-              <Button onClick={addToCart}>Add To Cart</Button>
+              <div className="mt-1">
+                <Button onClick={addToCart}>Add To Cart</Button>
+              </div>
             </div>
           </div>
         </main>
