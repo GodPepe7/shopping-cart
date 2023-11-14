@@ -13,7 +13,7 @@ function BasketItem({ title, coverImage, quantity, price, onClick }) {
         <p>Quantity: {quantity}</p>
         <p>Price: {price}€</p>
         <p>Sum: {quantity * price}€</p>
-        <button className="w-[25px] h-[25px]" onClick={onClick}>
+        <button className="w-[25px] h-[25px] ml-auto mr-0" onClick={onClick}>
           <img src={Trash} alt="Remove from basket" />
         </button>
       </div>
