@@ -13,7 +13,7 @@ function Header({ color }) {
 
   return (
     <header
-      className={`sticky flex justify-between items-center p-10 text-2xl font-medium text-${themes[color]}`}
+      className={`sticky flex gap-4 sm:gap-0 justify-center sm:justify-between items-center p-10 text-2xl font-medium text-${themes[color]} flex-wrap`}
     >
       <div>
         <h1>
@@ -23,19 +23,19 @@ function Header({ color }) {
         </h1>
       </div>
       <nav>
-        <ul className="flex gap-20 list-none items-center">
+        <ul className="flex gap-6 md:gap-12 2xl:gap-20 list-none items-center">
           <li
-            className={`hover:bg-${color}/60 bg-opacity-50 px-4 rounded-md hover:cursor-pointer`}
+            className={`hover:bg-${color}/60 bg-opacity-50 rounded-md hover:cursor-pointer`}
           >
             <Link to="/">Home</Link>
           </li>
           <li
-            className={`hover:bg-${color}/60 px-4 rounded-md hover:cursor-pointer`}
+            className={`hover:bg-${color}/60 rounded-md hover:cursor-pointer`}
           >
             <Link to="/shop">Shop</Link>
           </li>
           <li
-            className={`hover:bg-${color}/60 bg-opacity-25 px-4 rounded-md hover:cursor-pointer`}
+            className={`hover:bg-${color}/60 bg-opacity-25 rounded-md hover:cursor-pointer`}
           >
             <button
               className="border-none w-8 h-8"

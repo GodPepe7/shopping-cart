@@ -16,11 +16,15 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
 
   return (
     <dialog
-      className="min-h-screen min-w-[250px] w-[20%] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0"
+      className="min-h-screen min-w-[250px] w-[40%] max-w-[400px] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0"
       ref={ref}
       onCancel={closeModalHandler}
     >
-      <button onClick={closeModalHandler} className="w-5 h-5">
+      <button
+        onClick={closeModalHandler}
+        className="w-5 h-5"
+        aria-label="Close"
+      >
         <img src={Close} alt="Close Shopping Cart" />
       </button>
       <h2 className="text-center mb-4">Your Basket</h2>

@@ -11,6 +11,9 @@ export default {
         "theme-white": "#F7F8F7",
         "theme-black": "#0e110f",
       },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit, minmax(250px, 1fr))",
+      },
     },
   },
   plugins: [],
