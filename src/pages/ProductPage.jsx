@@ -30,17 +30,25 @@ function ProductPage() {
   const totalPrice = product.price * quantity;
 
   const addToCart = () =>
-    setBasket(
-      (prev) =>
-        new Map(
+    setBasket((prev) => {
+      const id = +productId;
+      if (prev.has(id)) {
+        const value = prev.get(id);
+        const map = new Map(
+          prev.set(id, { ...value, quantity: value.quantity + quantity })
+        );
+        return map;
+      } else {
+        return new Map(
           prev.set(product.id, {
             title: product.title,
             coverImage: product.coverImage,
             quantity,
             price: product.price,
           })
-        )
-    );
+        );
+      }
+    });
 
   return (
     (product && (
