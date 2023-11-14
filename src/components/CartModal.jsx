@@ -61,7 +61,7 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
               €
             </p>
           </div>
-          <button className="py-1 w-full text-theme-white bg-theme-black shadow-md uppercase tracking-wider">
+          <button className="py-1 w-full text-theme-white bg-theme-black shadow-md uppercase tracking-wider focus:outline-4 focus:outline-offset-2 focus:outline-blue-400">
             Checkout
           </button>
         </div>
