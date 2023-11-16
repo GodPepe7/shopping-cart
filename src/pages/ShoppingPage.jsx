@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Card from "../components/Card";
 import { useOutletContext } from "react-router-dom";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 function ShoppingPage() {
   const { products, error, loading, page, setPage } = useOutletContext();

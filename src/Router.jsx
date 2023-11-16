@@ -3,7 +3,6 @@ import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import ShoppingPage from "./pages/ShoppingPage";
 import ProductPage from "./pages/ProductPage";
-import { createContext } from "react";
 import App from "./App";
 
 function Router() {
