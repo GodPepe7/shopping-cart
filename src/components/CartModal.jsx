@@ -2,6 +2,12 @@ import Close from "../assets/icons/close.svg";
 import { useRef, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import BasketItem from "./BasketItem";
+import PropTypes from "prop-types";
+
+CartModal.propTypes = {
+  modalIsOpen: PropTypes.bool.isRequired,
+  closeModalHandler: PropTypes.func.isRequired,
+};
 
 function CartModal({ modalIsOpen, closeModalHandler }) {
   const { basket, setBasket } = useOutletContext();

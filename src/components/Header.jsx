@@ -2,6 +2,11 @@ import Cart from "../assets/icons/cart.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import CartModal from "./CartModal";
+import PropTypes from "prop-types";
+
+Header.propTypes = {
+  color: PropTypes.oneOf(["white", "black"]).isRequired,
+};
 
 function Header({ color }) {
   const themes = {

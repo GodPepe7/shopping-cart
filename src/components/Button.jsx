@@ -1,4 +1,9 @@
-import React from "react";
+import PropTypes from "prop-types";
+
+Button.propTypes = {
+  children: PropTypes.element.isRequired,
+  onClick: PropTypes.func,
+};
 
 function Button({ children, onClick }) {
   return (

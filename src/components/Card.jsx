@@ -1,4 +1,12 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  coverImage: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
 
 function Card({ id, coverImage, title, price }) {
   return (

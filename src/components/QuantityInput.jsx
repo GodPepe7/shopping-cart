@@ -1,5 +1,13 @@
 import Plus from "../assets/icons/plus.svg";
 import Minus from "../assets/icons/minus.svg";
+import PropTypes from "prop-types";
+
+QuantityInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  increaseQuantityHandler: PropTypes.func.isRequired,
+  decreaseQuantityHandler: PropTypes.func.isRequired,
+  quantity: PropTypes.number.isRequired,
+};
 
 function QuantityInput({
   onChange,

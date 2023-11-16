@@ -1,4 +1,13 @@
 import Trash from "../assets/icons/trash.svg";
+import PropTypes from "prop-types";
+
+BasketItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  coverImage: PropTypes.object.isRequired,
+  quantity: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 function BasketItem({ title, coverImage, quantity, price, onClick }) {
   return (
