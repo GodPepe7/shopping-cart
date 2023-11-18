@@ -43,7 +43,7 @@ function CartModal({ modalIsOpen, closeModalHandler }) {
       <button
         onClick={closeModalHandler}
         className="w-5 h-5"
-        aria-label="Close"
+        aria-label="close"
       >
         <img src={Close} alt="Close Shopping Cart" />
       </button>

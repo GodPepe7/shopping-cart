@@ -1,0 +1,110 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartModal > Matches Snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <dialog
+        class="min-h-screen min-w-[250px] w-[40%] max-w-[400px] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0 animate-[slide-out_0.15s_linear]"
+      >
+        <button
+          aria-label="close"
+          class="w-5 h-5"
+        >
+          <img
+            alt="Close Shopping Cart"
+            src="/src/assets/icons/close.svg"
+          />
+        </button>
+        <h2
+          class="text-center mb-4"
+        >
+          Your Basket
+        </h2>
+        <p
+          class="text-center italic font-extralight"
+        >
+          Shopping Cart is empty
+        </p>
+      </dialog>
+    </div>
+  </body>,
+  "container": <div>
+    <dialog
+      class="min-h-screen min-w-[250px] w-[40%] max-w-[400px] backdrop:backdrop-blur px-4 py-4 ml-auto mr-0 animate-[slide-out_0.15s_linear]"
+    >
+      <button
+        aria-label="close"
+        class="w-5 h-5"
+      >
+        <img
+          alt="Close Shopping Cart"
+          src="/src/assets/icons/close.svg"
+        />
+      </button>
+      <h2
+        class="text-center mb-4"
+      >
+        Your Basket
+      </h2>
+      <p
+        class="text-center italic font-extralight"
+      >
+        Shopping Cart is empty
+      </p>
+    </dialog>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
